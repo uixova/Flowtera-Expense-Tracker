@@ -1,0 +1,43 @@
+<div class="analysis-page" id="analysisPage">
+    <div class="an-nav">
+        <div class="an-nav-title">
+            <h1>Financial Analysis</h1>
+        </div>
+        <div class="an-nav-buttons">
+            <button class="an-export-btn" id="anExportBtn">
+                <i class="ti ti-download"></i> Export Data
+            </button>
+            <button class="an-refresh-btn"><i class="ti ti-refresh"></i></button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="analysis-summary-cards">
+        <div class="an-card">
+            <span class="an-card-title">Total Spending</span>
+            <span class="an-card-value">$12,450</span>
+            <span class="an-card-sub">+12% from last month</span>
+        </div>
+        <div class="an-card">
+            <span class="an-card-title">Active Trips</span>
+            <span class="an-card-value">4</span>
+            <span class="an-card-sub">2 international, 2 domestic</span>
+        </div>
+        <div class="an-card">
+            <span class="an-card-title">Pending Reports</span>
+            <span class="an-card-value">18</span>
+            <span class="an-card-sub">Waiting for approval</span>
+        </div>
+    </div>
+
+    <div class="analysis-charts-container">
+        <div class="chart-box">
+            <h3>Expense Categories</h3>
+            <canvas id="categoryChart"></canvas>
+        </div>
+        <div class="chart-box">
+            <h3>Monthly Cash Flow</h3>
+            <canvas id="cashFlowChart"></canvas>
+        </div>
+    </div>
+</div>

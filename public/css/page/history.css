@@ -1,0 +1,115 @@
+.history-page {
+    padding: 28px;
+}
+
+.hi-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.hi-nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.hi-nav-buttons button {
+    padding: 8px 12px;
+    background: #3d3d3d;
+    color: #0ed45a;
+    border: 1px solid #5a5a5a;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    background: #3d3d3d;
+    padding: 15px 20px;
+    gap: 20px;
+    position: relative;
+}
+
+.hi-icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.log-expense {
+    background: rgba(14, 212, 90, 0.2);
+    color: #0ed45a;
+}
+
+.log-trip {
+    background: rgba(162, 18, 224, 0.2);
+    color: #A212E0;
+}
+
+.log-delete {
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+}
+
+.hi-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hi-info {
+    display: flex;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.hi-user {
+    color: #fff;
+    font-weight: 600;
+}
+
+.hi-action {
+    color: #a7a6a6;
+}
+
+.hi-target {
+    color: #8cbed1;
+    font-style: italic;
+}
+
+.hi-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.hi-time {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.hi-amount {
+    color: #0ed45a;
+    font-weight: 600;
+}
+
+.hi-status-red {
+    color: #ff4444;
+    font-size: 0.8rem;
+}

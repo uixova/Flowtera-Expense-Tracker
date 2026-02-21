@@ -1,0 +1,55 @@
+1. Adım: Statik Sayfaların ve UI Modüllerinin Tamamlanması
+
+Önce tüm HTML/CSS iskeleti bitmeli.
+
+    Home Sayfası: O 4 büyük butonun yönlendireceği alt sayfalar ve dashboard'un genel görünümü.
+
+    Settings Sayfası: Tema seçimi (Dark/Light), profil ayarları ve genel yapılandırma.
+
+    Eksik Sayfalar: Help ve raporlama gibi kalan kısımların görsel iskeleti.
+
+2. Adım: Aksiyon Modelleri (Modals & UI Components)
+
+Sayfa yenilenmeden açılacak olan, işin fonksiyonel "pencereleri".
+
+    Expense & Trip Ekleme: Form yapıları, tarih seçiciler ve miktar girişleri.
+
+    Team & User Management: Ekip oluşturma ekranı, kullanıcı rol atama paneli ve o meşhur log detay penceresi.
+
+    Data Export: Analiz kısmındaki "Veri İndir" modelinin arayüzü.
+
+    Theme Switcher: Renk paletlerinin değiştiği arayüz modeli.
+
+3. Adım: Giriş ve Güvenlik Arayüzü (Auth UI)
+
+En başta değil, sistem hazır olunca "kapıyı" takıyoruz.
+
+    Detaylı Kayıt (Sign Up): Şirket adı, adres, numara, e-posta, yaş gibi tüm o "katı" verilerin toplandığı form.
+
+    Giriş (Login): Kullanıcıyı karşılayan ana ekran.
+
+    Profil Yönetimi: Şifre, e-posta ve telefonun değiştiği, ancak isim-soyisim gibi verilerin sabit kaldığı yönetim modeli.
+
+    Güvenlik Katmanı: Formlardaki verilerin (Hashleme öncesi) frontend tarafındaki validasyonları (doğrulamaları).
+
+4. Adım: Fonksiyonel Modeller ve JS Entegrasyonu (Görsel Test)
+
+    Veri Modelleri: Expense, Trip, User verilerinin JS içinde objelere dökülmesi.
+
+    Dinamik Listeleme: Yazdığın modellerin, hazırladığın HTML listelerine/kutucuklarına basılması.
+
+    Basit Testler: Arayüzün her çözünürlükte ve her "tıklamada" doğru tepki verip vermediğinin kontrolü.
+
+5. Adım: Denetim ve Kayıt Sistemi (Log Logic)
+
+    Audit Trail: Hangi kullanıcının hangi veriyi değiştirdiğinin (e-posta değişimi, harcama silme vb.) arayüzde nasıl gösterileceğinin kurgusu.
+
+    Gelişmiş Filtreleme: Loglar ve harcamalar içinde zaman/kullanıcı bazlı arama-tarama işlemleri.
+
+Plan Üzerine Notlar
+
+    Güvenlik: İsim ve soyismin değişmemesi, yaşın sabitliği gibi kurallar mükemmel. Bu, sistemin suistimal edilmesini engeller.
+
+    Hashleme: Backend kısmında derinlemesine bakacağız ama frontend'de veriyi gönderirken hazır hale getirmek önemli.
+
+    Display None: Modalları ve giriş ekranlarını sayfada hazır tutup sadece gerektiğinde (active class'ı ile) göstermek SPA mantığına tam uyuyor.

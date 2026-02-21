@@ -1,0 +1,151 @@
+<div class="home" id="home">
+    <div class="hm-top-ct">
+        <div class="hm-pending-task">
+            <div class="pending-task-title">
+                <h2>Pending Tasks</h2>
+            </div>
+            <hr>
+            <div class="hm-tasks-container">
+                <div class="hm-tasks-box">
+                    <h3><i class="ti ti-clock"></i> Pending
+                        Approvals</h3>
+                    <span id="pendingApprovalCount">5</span>
+                </div>
+                <div class="hm-tasks-box">
+                    <h3><i class="ti ti-plane-tilt"></i> New Trips
+                        Registered</h3>
+                    <span id="newTripRegCount">1</span>
+                </div>
+                <div class="hm-tasks-box">
+                    <h3><i class="ti ti-article"></i> Unreported
+                        Expenses</h3>
+                    <span id="unreportedExpCount">4</span>
+                </div>
+                <div class="hm-tasks-box">
+                    <h3><i class="ti ti-shopping-cart-share"></i>
+                        Upcoming Expenses</h3>
+                    <span id="upcomingExpCount">0</span>
+                </div>
+                <div class="hm-tasks-box">
+                    <h3><i class="ti ti-coin"></i> Unreported
+                        Advances</h3>
+                    <span id="unreportedAdvancesCount">€0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hm-recent-expenses">
+            <div class="recent-expenses-title">
+                <h2>Recent Expenses</h2>
+            </div>
+            <hr>
+            <div class="recent-expenses-category-list">
+                <span class="col-subject">Subject</span>
+                <span class="col-employee">Employee</span>
+                <span class="col-team">Team</span>
+                <span class="col-amount">Amount</span>
+            </div>
+
+            <div class="hm-recent-container">
+                <div class="hm-recent-box">
+                    <span class="spending col-subject">Office
+                        Supplies</span>
+                    <span class="spending col-employee">John
+                        Smith</span>
+                    <span class="spending badge-marketing"
+                        id="recenType">Marketing</span>
+                    <span class="spending col-amount">€150.00</span>
+                </div>
+                <div class="hm-recent-box">
+                    <span class="spending col-subject">Business
+                        Lunch</span>
+                    <span class="spending col-employee">Sarah
+                        Jade</span>
+                    <span class="spending badge-sales"
+                        id="recenType">Sales</span>
+                    <span class="spending col-amount">€75.50</span>
+                </div>
+                <div class="hm-recent-box">
+                    <span class="spending col-subject">Travel
+                        Expenses</span>
+                    <span class="spending col-employee">Mike
+                        Brown</span>
+                    <span class="spending badge-ops"
+                        id="recenType">Operations</span>
+                    <span class="spending col-amount">€450.25</span>
+                </div>
+                <div class="hm-recent-box">
+                    <span class="spending col-subject">Client
+                        Dinner</span>
+                    <span class="spending col-employee">Jennifer
+                        Lee</span>
+                    <span class="spending badge-marketing"
+                        id="recenType">Marketing</span>
+                    <span class="spending col-amount">€120.00</span>
+                </div>
+                <div class="hm-recent-box">
+                    <span class="spending col-subject">Hotel</span>
+                    <span class="spending col-employee">David
+                        Wilson</span>
+                    <span class="spending badge-finance"
+                        id="recenType">Finance</span>
+                    <span class="spending col-amount">€275.75</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hm-mid-ct">
+        <div class="hm-quick-access">
+            <div class="quick-access-title">
+                <h2>Quick Access</h2>
+            </div>
+            <hr>
+            <div class="quick-access-container">
+                <div class="create-box" id="new-expense">
+                    <span class="new-expense-i"><i
+                            class="ti ti-credit-card"></i></span>
+                    <a href="#">+ New expense</a>
+                </div>
+                <div class="create-box" id="add-recepit">
+                    <span class="add-recepit-i"><i
+                            class="ti ti-news"></i></span>
+                    <a href="#">+ Add recepit</a>
+                </div>
+                <div class="create-box" id="create-report">
+                    <span class="create-report-i"><i
+                            class="ti ti-file-description"></i></span>
+                    <a href="#">+ Create Report</a>
+                </div>
+                <div class="create-box" id="create-trip">
+                    <span class="create-trip-i"><i
+                            class="ti ti-globe"></i></span>
+                    <a href="#">+ Create trip</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hm-bottom-ct">
+        <div class="monthly-report-panel">
+            <div class="report-header">
+                <h2>Monthly Report</h2>
+            </div>
+            <hr>
+            <div class="charts-wrapper">
+                <div class="chart-container">
+                    <h3>Team Spending Trend</h3>
+                    <canvas id="teamSpendingChart"></canvas>
+                </div>
+
+                <div class="chart-divider"></div>
+
+                <div class="chart-container">
+                    <h3>Day-to-Day Expenses</h3>
+                    <canvas id="dailyExpensesChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,99 @@
+<div class="team-page" id="teamPage">
+    <div class="tm-nav">
+        <div class="tm-nav-title">
+            <h1>Team Management</h1>
+        </div>
+        <div class="tm-nav-buttons">
+            <div class="tm-search-wrapper">
+                <i class="ti ti-search"></i>
+                <input type="text" id="tmSearchInput"
+                    placeholder="Search member or role...">
+            </div>
+            <button class="tm-create-team-btn" onclick="toggleTeamList()">
+                <i class="ti ti-list"></i> My Teams
+            </button>
+            <button class="tm-add-member-btn">
+                <i class="ti ti-user-plus"></i> Quick Add
+            </button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="tm-list-view" id="tmListView" style="display:none;">
+        <div class="tm-list-item active">
+            <span>Main Development Team</span>
+            <span class="tm-count">5 Members</span>
+        </div>
+        <div class="tm-list-item">
+            <span>Marketing Group</span>
+            <span class="tm-count">3 Members</span>
+        </div>
+    </div>
+
+    <div class="team-grid-container" id="teamGrid">
+        <div class="team-card">
+            <div class="tm-card-header">
+                <span class="tm-role-badge admin">Admin</span>
+                <div class="tm-actions">
+                    <button title="Edit Role" class="tm-action-btn"><i
+                            class="ti ti-edit"></i></button>
+                    <button title="View Logs" class="tm-action-btn log-btn"><i
+                            class="ti ti-history"></i></button>
+                    <button title="Remove Member"
+                        class="tm-action-btn delete-btn"><i
+                            class="ti ti-user-minus"></i></button>
+                </div>
+            </div>
+
+            <div class="tm-user-body">
+                <img src="images/user-profile.png" alt="User">
+                <h3>Ahmet Yılmaz</h3>
+                <p>ahmet@flowtera.com</p>
+            </div>
+
+            <div class="tm-user-footer">
+                <div class="tm-stat">
+                    <span class="stat-label">Last Action</span>
+                    <span class="stat-value">22:15:42 - 09/02</span>
+                </div>
+                <button class="view-full-logs-btn">Full Activity Log</button>
+            </div>
+        </div>
+
+        <div class="team-card add-member-card">
+            <div class="add-icon-wrapper">
+                <i class="ti ti-plus"></i>
+            </div>
+            <span>New Member</span>
+        </div>
+    </div>
+</div>
+
+<div class="tm-log-modal" id="tmLogModal" style="display:none;">
+    <div class="tm-modal-content">
+        <div class="tm-modal-header">
+            <h2>User Activity Logs: Ahmet Yılmaz</h2>
+            <button onclick="closeLogModal()"><i class="ti ti-x"></i></button>
+        </div>
+        <div class="tm-modal-body">
+            <table class="log-table">
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Action</th>
+                        <th>IP Address</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="userSpecificLogs">
+                    <tr>
+                        <td>2026-02-09 22:15:42</td>
+                        <td>Added Expense #442</td>
+                        <td>192.168.1.1</td>
+                        <td><span class="log-success">Success</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
