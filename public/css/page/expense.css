@@ -18,7 +18,8 @@
 
 .ex-nav-buttons button {
     padding: 8px;
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: 500;
     background: #3d3d3d;
     color: #0ed45a;
     border: 1px solid #5a5a5a;

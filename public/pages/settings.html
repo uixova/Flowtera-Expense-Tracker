@@ -1,0 +1,148 @@
+<div class="settings-container" id="settingsPage">
+    <div class="st-sidebar">
+        <div class="st-menu">
+            <div class="st-menu-item active"
+                onclick="showSettingsSection('st-profile')">
+                <i class="ti ti-user-circle"></i> Profile Details
+            </div>
+            <div class="st-menu-item"
+                onclick="showSettingsSection('st-security')">
+                <i class="ti ti-lock"></i> Security & Privacy
+            </div>
+            <div class="st-menu-item" onclick="showSettingsSection('st-logs')">
+                <i class="ti ti-history"></i> My Activity Logs
+            </div>
+            <div class="st-menu-item"
+                onclick="showSettingsSection('st-notifications')">
+                <i class="ti ti-bell"></i> Notifications
+            </div>
+        </div>
+
+        <div class="st-logout-btn" id="btnLogout">
+            <i class="ti ti-logout"></i> Logout Account
+        </div>
+    </div>
+
+    <div class="st-main-content">
+
+        <div id="st-profile" class="st-content-section">
+            <h2>Profile Details</h2>
+            <div class="st-card">
+
+                <div class="st-avatar-wrapper">
+                    <div class="st-avatar-main">
+                        <img src="images/user-profile.png" id="stAvatarPreview"
+                            alt="Profile">
+
+                    </div>
+                    <div class="st-avatar-info">
+                        <div class="st-avatar-text">
+                            <p class="st-avatar-title">Profile Picture</p>
+                        <p class="st-avatar-subtitle">PNG, JPG or GIF. Max
+                            2MB.</p>
+                        </div>
+                        <div class="st-avatar-actions">
+                            <label for="avatarUpload"
+                                class="st-avatar-btn upload">
+                                <i class="ti ti-camera"></i> Change Photo
+                                <input type="file" id="avatarUpload" hidden
+                                    accept="image/*">
+                            </label>
+                            <button class="st-avatar-btn remove"
+                                id="btnRemoveAvatar">
+                                <i class="ti ti-trash"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="st-grid">
+                    <div class="st-input-group readonly">
+                        <label>User ID</label>
+                        <input type="text" value="#FLW-9921" readonly>
+                    </div>
+                    <div class="st-input-group readonly">
+                        <label>Registration Date</label>
+                        <input type="text" value="24/02/2026" readonly>
+                    </div>
+                    <div class="st-input-group readonly">
+                        <label>Full Name</label>
+                        <input type="text" value="Ahmet Yılmaz" readonly>
+                    </div>
+                    <div class="st-input-group readonly">
+                        <label>Age</label>
+                        <input type="text" value="28" readonly>
+                    </div>
+                    <div class="st-input-group">
+                        <label>Email Address</label>
+                        <input type="email" value="ahmet@flowtera.com"
+                            id="stInpEmail">
+                    </div>
+                    <div class="st-input-group">
+                        <label>Phone Number</label>
+                        <input type="text" value="+90 555 000 00 00"
+                            id="stInpPhone">
+                    </div>
+                </div>
+                <button class="st-save-btn">Update Contact Info</button>
+            </div>
+        </div>
+
+        <div id="st-security" class="st-content-section" style="display:none;">
+            <h2>Security & Privacy</h2>
+            <div class="st-card">
+                <div class="st-input-group">
+                    <label>Current Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+                <div class="st-input-group">
+                    <label>New Password</label>
+                    <input type="password" placeholder="Enter new password">
+                </div>
+                <div class="st-input-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" placeholder="Confirm new password">
+                </div>
+                <button class="st-save-btn">Change Password</button>
+            </div>
+        </div>
+
+        <div id="st-logs" class="st-content-section" style="display:none;">
+            <h2>Your Recent Logs</h2>
+            <div class="st-card">
+                <div class="st-log-list">
+                    <div class="st-log-item">
+                        <span class="log-time">24/02 22:15</span>
+                        <span class="log-desc">Password changed
+                            successfully.</span>
+                        <span class="log-ip">IP: 192.168.1.45</span>
+                    </div>
+                    <div class="st-log-item">
+                        <span class="log-time">23/02 10:05</span>
+                        <span class="log-desc">Logged in from Chrome
+                            (Windows).</span>
+                        <span class="log-ip">IP: 192.168.1.45</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="st-notifications" class="st-content-section"
+            style="display:none;">
+            <h2>Notifications</h2>
+            <div class="st-card">
+                <div class="st-toggle-row">
+                    <span>Email Notifications</span>
+                    <label class="switch"><input type="checkbox" checked><span
+                            class="slider"></span></label>
+                </div>
+                <div class="st-toggle-row">
+                    <span>Login Alerts</span>
+                    <label class="switch"><input type="checkbox" checked><span
+                            class="slider"></span></label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -6,11 +6,13 @@
         <title>Expense Tracker</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/page/home.css">
+        <link rel="stylesheet" href="css/modals.css">
         <link rel="stylesheet" href="css/page/expense.css">
         <link rel="stylesheet" href="css/page/trips.css">
         <link rel="stylesheet" href="css/page/analysis.css">
         <link rel="stylesheet" href="css/page/history.css">
         <link rel="stylesheet" href="css/page/team.css">
+        <link rel="stylesheet" href="css/page/st.css">
         <link rel="stylesheet" href="css/head.css">
         <link rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
@@ -32,10 +34,11 @@
                         <button class="light-dark-head" id="headThemeBtn"><i
                                 class="ti ti-sun"></i></button>
                     </div>
-                    <div class="head-user-profile" id="headUserProfile">
+                    <div class="head-user-profile" id="headUserProfile"
+                        onclick="toggleUserDropdown(event)">
                         <div class="head-profile-img">
-                            <a href="#userSettings"><img
-                                    src="images/user-profile.png"></a>
+                            <img src="images/user-profile.png"
+                                id="navAvatarPreview">
                         </div>
                     </div>
                 </div>
@@ -64,8 +67,10 @@
                 </div>
                 <div class="right-head">
                     <ul>
-                        <li><a href="#settings">Settings</a></li>
-                        <li><a href="#theme">Theme</a></li>
+                        <li><button class="nav-settings-btn"
+                                onclick="window.location.hash = 'settings'">Settings</button></li>
+                        <li><button class="nav-theme-btn"
+                                onclick="toggleThemePanel(event)">Theme</button></li>
                     </ul>
                 </div>
             </div>
@@ -77,5 +82,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/st.js"></script>
+        <script src="js/modals.js"></script>
     </body>
 </html>

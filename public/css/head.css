@@ -116,17 +116,17 @@ header a.active {
     background: rgba(119, 119, 119, 0.096);
 }
 
-.right-head ul li {
-    font-size: 18px;
-}
-
-.right-head ul li a {
+.right-head ul li button {
     text-decoration: none;
     color: var(--white);
     padding: 12px;
+    background: none;
+    border: none;
+    font-size: 18px;
 }
 
-.right-head ul li a:hover {
+.right-head ul li button:hover {
     background: rgba(119, 119, 119, 0.096);
+    cursor: pointer;
 }
 

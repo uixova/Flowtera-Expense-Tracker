@@ -1,0 +1,140 @@
+<div class="panel-overlay" id="themePanelOverlay"
+    onclick="uiController.togglePanel('themePanel')">
+    <div class="side-panel" id="themePanel" onclick="event.stopPropagation()">
+        <div class="panel-header">
+            <h3>Appearance</h3>
+            <button class="panel-close"
+                onclick="uiController.toggleThemePanel()"><i
+                    class="ti ti-x"></i></button>
+        </div>
+
+        <div class="panel-body">
+            <div class="panel-section">
+                <label>System Mode</label>
+                <div class="mode-switch-group">
+                    <button class="mode-opt active" data-mode="dark"><i
+                            class="ti ti-moon"></i> Dark</button>
+                    <button class="mode-opt" data-mode="light"><i
+                            class="ti ti-sun"></i> Light</button>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <label>Accent Color</label>
+                <div class="color-picker-grid">
+                    <div class="color-dot active" style="background: #50e091;"
+                        data-color="#50e091"></div>
+                    <div class="color-dot" style="background: #0ed45a;"
+                        data-color="#0ed45a"></div>
+                    <div class="color-dot" style="background: #8cbed1;"
+                        data-color="#8cbed1"></div>
+                    <div class="color-dot" style="background: #f1c40f;"
+                        data-color="#f1c40f"></div>
+                    <div class="color-dot" style="background: #e74c3c;"
+                        data-color="#e74c3c"></div>
+                    <div class="color-dot" style="background: #f10ff1;"
+                        data-color="#f10ff1"></div>
+                    <div class="color-dot" style="background: #943ce7;"
+                        data-color="#943ce7"></div>
+                    <div class="color-dot" style="background: #0f97f1;"
+                        data-color="#0f97f1"></div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <label>Corner Radius</label>
+                <div class="radius-list">
+                    <button class="rad-opt" data-radius="0px">Sharp</button>
+                    <button class="rad-opt active"
+                        data-radius="8px">Soft</button>
+                    <button class="rad-opt" data-radius="15px">Round</button>
+                    <button class="rad-opt" data-radius="20px">Soft
+                        Round</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <button class="btn-reset">Reset</button>
+            <button class="btn-save">Save Design</button>
+        </div>
+    </div>
+</div>
+
+<div class="user-quick-dropdown" id="userDropdown"
+    onclick="event.stopPropagation()">
+    <div class="dropdown-header">
+        <p class="user-name">Ahmet Yılmaz</p>
+        <p class="user-status">Online</p>
+    </div>
+    <hr>
+    <button class="dropdown-item"
+        onclick="window.location.hash = 'settings'; toggleUserDropdown();">
+        <i class="ti ti-settings"></i> Settings
+    </button>
+    <button class="dropdown-item logout" onclick="alert('Çıkış yapıldı knk!')">
+        <i class="ti ti-logout"></i> Logout Account
+    </button>
+</div>
+
+<div class="modal-overlay" id="exportModalOverlay"
+    onclick="uiController.toggleExportModal()">
+    <div class="export-modal" onclick="event.stopPropagation()">
+        <div class="ex-header">
+            <div class="ex-title">
+                <i class="ti ti-file-export"></i>
+                <span>Export Report</span>
+            </div>
+            <button class="ex-close"
+                onclick="uiController.toggleExportModal()"><i
+                    class="ti ti-x"></i></button>
+        </div>
+
+        <div class="ex-body">
+            <div class="ex-document-preview">
+                <div class="ex-doc-header">
+                    <p>Flowtera Financial Report</p>
+                    <span id="exCurrentDate">24/02/2026</span>
+                </div>
+                <div class="ex-doc-content">
+                    <div class="doc-line"></div>
+                    <div class="doc-line short"></div>
+                    <div class="doc-line"></div>
+                </div>
+            </div>
+
+            <div class="ex-options-grid">
+                <label class="ex-option">
+                    <input type="radio" name="exportFormat" value="pdf" checked>
+                    <div class="ex-option-card">
+                        <i class="ti ti-file-type-pdf"></i>
+                        <span>PDF Document</span>
+                    </div>
+                </label>
+                <label class="ex-option">
+                    <input type="radio" name="exportFormat" value="excel">
+                    <div class="ex-option-card">
+                        <i class="ti ti-file-spreadsheet"></i>
+                        <span>Excel Sheet</span>
+                    </div>
+                </label>
+                <label class="ex-option">
+                    <input type="radio" name="exportFormat" value="csv">
+                    <div class="ex-option-card">
+                        <i class="ti ti-file-text"></i>
+                        <span>CSV File</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="ex-footer">
+            <button class="ex-btn cancel"
+                onclick="uiController.toggleExportModal()">Cancel</button>
+            <button class="ex-btn download"
+                onclick="uiController.handleExport()">
+                <i class="ti ti-download"></i> Download
+            </button>
+        </div>
+    </div>
+</div>
