@@ -3,9 +3,9 @@
     <div class="side-panel" id="themePanel" onclick="event.stopPropagation()">
         <div class="panel-header">
             <h3>Appearance</h3>
-            <button class="panel-close"
-                onclick="uiController.toggleThemePanel()"><i
-                    class="ti ti-x"></i></button>
+            <button class="panel-close" onclick="toggleThemePanel(event)">
+                <i class="ti ti-x"></i>
+            </button>
         </div>
 
         <div class="panel-body">
@@ -78,7 +78,7 @@
 </div>
 
 <div class="modal-overlay" id="exportModalOverlay"
-    onclick="uiController.toggleExportModal()">
+    onclick="toggleExportModal()">
     <div class="export-modal" onclick="event.stopPropagation()">
         <div class="ex-header">
             <div class="ex-title">
@@ -86,7 +86,7 @@
                 <span>Export Report</span>
             </div>
             <button class="ex-close"
-                onclick="uiController.toggleExportModal()"><i
+                onclick="toggleExportModal()"><i
                     class="ti ti-x"></i></button>
         </div>
 
@@ -130,9 +130,9 @@
 
         <div class="ex-footer">
             <button class="ex-btn cancel"
-                onclick="uiController.toggleExportModal()">Cancel</button>
+                onclick="toggleExportModal()">Cancel</button>
             <button class="ex-btn download"
-                onclick="uiController.handleExport()">
+                onclick="handleExport()">
                 <i class="ti ti-download"></i> Download
             </button>
         </div>

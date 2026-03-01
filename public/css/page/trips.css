@@ -27,7 +27,7 @@
     cursor: pointer;
 }
 
-#trCreateBtn {
+#trCreateTrip {
     background: #8cbed1;
     background: linear-gradient(140deg, rgba(140, 190, 209, 1) 0%, rgba(14, 212, 90, 1) 66%);
     color: #000;
@@ -53,7 +53,7 @@
 
 .trip-block-details {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     gap: 12px;
 }
@@ -61,7 +61,7 @@
 .trip-details-text {
     display: flex;
     flex-direction: column;
-    gap: 2px; 
+    gap: 2px;
 }
 
 .trip-date {
@@ -78,16 +78,16 @@
 
 .tr-title-span {
     color: #a7a6a6;
-    font-size: 16px; 
+    font-size: 16px;
     font-weight: 500;
 }
 
 .trip-status {
-    padding: 6px 10px; 
+    padding: 6px 10px;
     background: #A212E0;
     border-radius: 28px;
     width: 125px;
-    text-align: center; 
+    text-align: center;
     font-size: 0.85rem;
     display: inline-block;
     color: #fff;
@@ -97,14 +97,161 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px; 
+    width: 40px;
     height: 40px;
     background: #c5a2e2;
     color: #9d4edd;
-    font-size: 22px; 
+    font-size: 22px;
     border-radius: 50%;
 }
 
-.status-confirmed { background: #0ed45a; color: #000; }
-.status-onroad { background: #e67e22; }
-.status-planned { background: #5a5a5a; }
+.status-confirmed {
+    background: #0ed45a;
+    color: #000;
+}
+
+.status-onroad {
+    background: #e67e22;
+}
+
+.status-planned {
+    background: #5a5a5a;
+}
+
+/* Modal Form */
+
+.tr-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10006;
+}
+
+.tr-modal-overlay.active {
+    display: flex;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.tr-modal-card {
+    width: 550px;
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 24px;
+    box-shadow: 0 0 50px rgba(14, 212, 90, 0.1);
+}
+
+.tr-modal-header {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+}
+
+.tr-modal-close {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.tr-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tr-modal-title i {
+    color: #0ed45a;
+    font-size: 1.6rem;
+}
+
+.tr-modal-body {
+    padding: 25px;
+}
+
+.tr-input-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tr-input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tr-input-group.full {
+    margin-bottom: 20px;
+}
+
+.tr-input-group label {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tr-input-group input, .tr-input-group select, .tr-input-group textarea {
+    background: #2a2a2a;
+    border: 1px solid #3d3d3d;
+    border-radius: 12px;
+    padding: 12px 15px;
+    color: #fff;
+    outline: none;
+}
+
+.tr-input-group input:focus {
+    border-color: #0ed45a;
+}
+
+.tr-input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.tr-modal-footer {
+    padding: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.tr-modal-btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+}
+
+.tr-modal-btn.cancel {
+    background: #333;
+    color: #eee;
+}
+
+.tr-modal-btn.save {
+    background: #0ed45a;
+    color: #000;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

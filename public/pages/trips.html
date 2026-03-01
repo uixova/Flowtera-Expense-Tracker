@@ -10,7 +10,7 @@
                     <input type="text" id="trSearchInput"
                         placeholder="Search trips...">
                 </div>
-                <button id="trCreateBtn">New Trip</button>
+                <button id="trCreateTrip" onclick="window.toggleNewTripModal()">New Trip</button>
                 <button class="tr-filter-btn" id="trFilterBtn"><i
                         class="ti ti-filter"></i></button>
                 <button class="tr-ranking-btn" id="trRankingBtn"><i
@@ -70,6 +70,89 @@
                 <span class="trip-duration">5 Days</span>
                 <span class="trip-status status-onroad">On
                     Road</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tr-modal-overlay" id="newTripModal">
+        <div class="tr-modal-card">
+            <div class="tr-modal-header">
+                <div class="tr-modal-title">
+                    <i class="ti ti-plane-arrival"></i>
+                    <span>Plan New Trip</span>
+                </div>
+                <button class="tr-modal-close" onclick="toggleNewTripModal()"><i
+                        class="ti ti-x"></i></button>
+            </div>
+
+            <div class="tr-modal-body">
+                <form id="newTripForm" onsubmit="event.preventDefault()">
+                    <div class="tr-input-group full">
+                        <label for="trInpTitle">Trip Details / Purpose</label>
+                        <input type="text" id="trInpTitle"
+                            placeholder="e.g. Business Meeting in Berlin"
+                            required>
+                    </div>
+
+                    <div class="tr-input-row">
+                        <div class="tr-input-group">
+                            <label for="trInpCategory">Category</label>
+                            <select id="trInpCategory">
+                                <option value="Business">Business</option>
+                                <option value="Vacation">Vacation</option>
+                                <option value="Event">Event</option>
+                            </select>
+                        </div>
+                        <div class="tr-input-group">
+                            <label for="trInpDestination">Destination</label>
+                            <input type="text" id="trInpDestination"
+                                placeholder="e.g. Berlin, Germany" required>
+                        </div>
+                    </div>
+
+                    <div class="tr-input-row">
+                        <div class="tr-input-group">
+                            <label for="trInpStartDate">Start Date</label>
+                            <input type="date" id="trInpStartDate" required>
+                        </div>
+                        <div class="tr-input-group">
+                            <label for="trInpEndDate">End Date</label>
+                            <input type="date" id="trInpEndDate" required>
+                        </div>
+                    </div>
+
+                    <div class="tr-input-row">
+                        <div class="tr-input-group">
+                            <label for="trInpVehicle">Vehicle</label>
+                            <select id="trInpVehicle">
+                                <option value="Plane">Plane</option>
+                                <option value="Train">Train</option>
+                                <option value="Car">Car</option>
+                                <option value="Bus">Bus</option>
+                            </select>
+                        </div>
+                        <div class="tr-input-group">
+                            <label for="trInpCost">Est. Cost ($)</label>
+                            <input type="number" id="trInpCost"
+                                placeholder="0.00">
+                        </div>
+                    </div>
+
+                    <div class="tr-input-group full">
+                        <label for="trInpDescription">Trip Description
+                            (Mandatory)</label>
+                        <textarea id="trInpDescription"
+                            placeholder="Provide detailed info about the trip..."
+                            required></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="tr-modal-footer">
+                <button class="tr-modal-btn cancel"
+                    onclick="toggleNewTripModal()">Cancel</button>
+                <button class="tr-modal-btn save" id="trSaveBtn">Create Trip
+                    Plan</button>
             </div>
         </div>
     </div>

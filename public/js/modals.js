@@ -38,7 +38,7 @@ function toggleUserDropdown(e) {
     }
 }
 
-// --- EXPORT MODALI AÇ/KAPAT ---
+// EXPORT MODAL
 function toggleExportModal() {
     const overlay = document.getElementById('exportModalOverlay');
     if (!overlay) return;
@@ -52,6 +52,30 @@ function toggleExportModal() {
         }
         overlay.classList.add('active');
     }
+}
+
+// NEW EXPENSE FORM
+function toggleNewExpenseModal() {
+    const modal = document.getElementById('newExpenseModal');
+    if (!modal) {
+        console.error("Modal bulunamadı knk!");
+        return;
+    }
+
+    if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+    } else {
+        const dateSpan = document.getElementById('exAutoDate');
+        if (dateSpan) dateSpan.innerText = new Date().toLocaleDateString('tr-TR');
+        modal.classList.add('active');
+    }
+}
+
+// NEW TRİPS FORM
+function toggleNewTripModal() {
+    const modal = document.getElementById('newTripModal');
+    if (!modal) return;
+    modal.classList.toggle('active');
 }
 
 // --- VERİ DIŞA AKTARMA İŞLEMİ ---
@@ -91,16 +115,34 @@ window.addEventListener('hashchange', function() {
     }
 });
 
+document.addEventListener('click', function(e) {
+    if (e.target.closest('#exCreateExpense')) {
+        toggleNewExpenseModal();
+    }
+});
+
 // --- DIŞARIYA TIKLAYINCA KAPATMA ---
 document.addEventListener('click', function(e) {
     const dropdown = document.getElementById('userDropdown');
     const profileArea = document.getElementById('headUserProfile');
+    const modal = document.getElementById('tmLogModal');
+    const addMember = document.getElementById("tmAddMemberModal");
 
     // Profil menüsü dışına tıklandıysa kapat
     if (dropdown && dropdown.classList.contains('active')) {
         if (!dropdown.contains(e.target) && !profileArea.contains(e.target)) {
             dropdown.classList.remove('active');
         }
+    }
+
+    //Log model kapatma
+    if (e.target == modal) {
+        closeLogModal();
+    }
+
+    //Add member kapatma
+    if (e.target == addMember) {
+        closeAddMemberModal();
     }
 
     // Tema paneli dışına tıklanınca kapat
@@ -112,6 +154,45 @@ document.addEventListener('click', function(e) {
         alert("Session closed!");
     }
 });
+
+// LOG MODALS
+function openLogModal(name, email) {
+    const modal = document.getElementById('tmLogModal');
+    if (name) document.getElementById('modalUserName').innerText = name;
+    if (email) document.getElementById('modalUserEmail').innerText = email;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; 
+}
+
+function closeLogModal() {
+    const modal = document.getElementById('tmLogModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// ROLE MODALS
+function openEditRoleModal(userName) {
+    const modal = document.getElementById('tmEditRoleModal');
+    if (userName) document.getElementById('editRoleTargetUser').innerText = userName;
+    
+    modal.style.display = 'flex';
+}
+
+function closeEditRoleModal() {
+    document.getElementById('tmEditRoleModal').style.display = 'none';
+}
+
+// ADD MEMBER MODALS
+function openAddMemberModal() {
+    const modal = document.getElementById('tmAddMemberModal');
+    document.getElementById('tmNewMemberId').value = '';
+    modal.style.display = 'flex';
+}
+
+function closeAddMemberModal() {
+    document.getElementById('tmAddMemberModal').style.display = 'none';
+}
 
 // Tüm Modelleri Yükle
 async function loadModals() {
@@ -126,5 +207,8 @@ async function loadModals() {
         console.error("Error loading modals:", error);
     }
 }
+
+window.toggleNewExpenseModal = toggleNewExpenseModal;
+window.toggleNewTripModal = toggleNewTripModal;
 
 document.addEventListener('DOMContentLoaded', loadModals);

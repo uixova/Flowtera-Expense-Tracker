@@ -16,18 +16,6 @@
     flex: 1;
 }
 
-h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #333;
-    margin-bottom: 20px;
-}
-
 .hm-top-ct {
     grid-column: span 2; 
     display: grid;
