@@ -10,13 +10,15 @@
                     <input type="text" id="trSearchInput"
                         placeholder="Search trips...">
                 </div>
-                <button id="trCreateTrip" onclick="window.toggleNewTripModal()">New Trip</button>
-                <button class="tr-filter-btn" id="trFilterBtn"><i
+                <button id="trCreateTrip"
+                    onclick="window.toggleNewTripModal()">New Trip</button>
+                <button class="tr-filter-btn" id="trFilterBtn"
+                    onclick="toggleFilter('trips', this)"><i
                         class="ti ti-filter"></i></button>
                 <button class="tr-ranking-btn" id="trRankingBtn"><i
                         class="ti ti-filter-2"></i></button>
                 <button class="tr-setting-btn" id="trSettingBtn"><i
-                        class="ti ti-dots"></i></button>
+                        class="ti ti-list-details"></i></button>
             </div>
         </div>
         <hr>

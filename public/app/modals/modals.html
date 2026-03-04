@@ -138,3 +138,78 @@
         </div>
     </div>
 </div>
+
+<div id="exDetailModal" class="adm-modal-overlay" style="display: none;">
+    <div class="adm-modal-box ex-detail-box">
+        <div class="adm-modal-header">
+            <div class="adm-header-left">
+                <div class="adm-icon-circle"><i class="ti ti-receipt"></i></div>
+                <div class="adm-header-text">
+                    <h3 id="detExTitle">Amazon Web Services</h3>
+                    <p id="detExCategory">Category: Infrastructure</p>
+                </div>
+            </div>
+            <button class="adm-close-btn" onclick="closeExDetailModal()"><i class="ti ti-x"></i></button>
+        </div>
+
+        <div class="adm-modal-body">
+            <div class="ex-detail-grid">
+                <div class="ex-receipt-view">
+                    <label>Receipt Preview</label>
+                    <div class="receipt-placeholder">
+                        <img src="images/receipt.jpg" id="detExImage" alt="Receipt">
+                    </div>
+                </div>
+
+                <div class="ex-info-view">
+                    <div class="ex-data-row">
+                        <span>Amount:</span>
+                        <strong id="detExAmount">$450.00</strong>
+                    </div>
+                    <div class="ex-data-row">
+                        <span>Submitted By:</span>
+                        <span id="detExUser">Ahmet Yılmaz</span>
+                    </div>
+                    <div class="ex-data-row">
+                        <span>Status:</span>
+                        <span class="status-badge approved">Approved</span>
+                    </div>
+                    <div class="ex-data-row">
+                        <span>Description:</span>
+                        <p id="detExDesc">Monthly server costs for production environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="adm-modal-footer">
+            <div class="ex-download-options">
+                <button class="adm-btn-secondary"><i class="ti ti-file-type-pdf"></i> PDF</button>
+                <button class="adm-btn-secondary"><i class="ti ti-photo"></i> PNG</button>
+            </div>
+            <button class="adm-btn-primary"><i class="ti ti-download"></i> Download All</button>
+        </div>
+    </div>
+</div>
+
+<div id="filterPopover" class="filter-popover" style="display: none;">
+    <div class="popover-header">
+        <div class="header-left">
+            <i class="ti ti-adjustments-horizontal"></i>
+            <span>Refine Search</span>
+        </div>
+        <div class="header-right">
+            <button onclick="clearAllFilters()" class="clear-all-btn">Reset</button>
+            <button onclick="closeFilterPopover()" class="pop-close-btn"><i class="ti ti-x"></i></button>
+        </div>
+    </div>
+    
+    <div id="filterDynamicContent" class="popover-body">
+        </div>
+
+    <div class="popover-footer">
+        <button class="apply-filters-btn" onclick="applyCurrentFilters()">
+            Apply Filters
+        </button>
+    </div>
+</div>

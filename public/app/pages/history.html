@@ -1,0 +1,125 @@
+<div class="history-page" id="historyPage">
+    <div class="hi-nav">
+        <div class="hi-nav-title">
+            <h1>Activity History</h1>
+        </div>
+        <div class="hi-nav-buttons">
+            <div class="search-wrapper" id="hiSearchWrapper">
+                <i class="ti ti-search"></i>
+                <input type="text" id="hiSearchInput"
+                    placeholder="Search activity logs...">
+            </div>
+            <button class="hi-filter-btn"
+                onclick="toggleFilter('history', this)"><i
+                    class="ti ti-adjustments-horizontal"></i></button>
+            <button class="hi-refresh-btn"><i
+                    class="ti ti-refresh"></i></button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="history-list-container" id="historyListBody">
+        <div class="history-list-container" id="historyListBody">
+
+            <div class="history-item" data-role="system">
+                <div class="hi-status-line"></div>
+                <div class="hi-icon log-system"><i
+                        class="ti ti-settings-automation"></i></div>
+                <div class="hi-content">
+                    <div class="hi-info">
+                        <div class="hi-user-wrapper">
+                            <span class="hi-badge system">System</span>
+                            <span class="hi-user">Flowtera Bot</span>
+                        </div>
+                        <span class="hi-action">automatically updated:</span>
+                        <span class="hi-target">"Exchange Rates"</span>
+                    </div>
+                    <div class="hi-meta">
+                        <span class="hi-time">Just now</span>
+                        <span class="hi-tag-alt">Updated</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-item" data-role="system">
+                <div class="hi-status-line"></div>
+                <div class="hi-icon log-join"><i
+                        class="ti ti-user-plus"></i></div>
+                <div class="hi-content">
+                    <div class="hi-info">
+                        <div class="hi-user-wrapper">
+                            <span class="hi-badge system">System</span>
+                            <span class="hi-user">Platform</span>
+                        </div>
+                        <span class="hi-action">welcomed a new member:</span>
+                        <span class="hi-target">"Arda Yaman"</span>
+                    </div>
+                    <div class="hi-meta">
+                        <span class="hi-time">10 mins ago</span>
+                        <span class="hi-tag-join">Joined</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-item" data-role="member">
+                <div class="hi-status-line"></div>
+                <div class="hi-icon log-expense"><i
+                        class="ti ti-plus"></i></div>
+                <div class="hi-content">
+                    <div class="hi-info">
+                        <div class="hi-user-wrapper">
+                            <span class="hi-badge member">Member</span>
+                            <span class="hi-user">Caner Durmuş</span>
+                        </div>
+                        <span class="hi-action">added a new expense:</span>
+                        <span class="hi-target">"Fuel for Truck"</span>
+                    </div>
+                    <div class="hi-meta">
+                        <span class="hi-time">5 mins ago</span>
+                        <span class="hi-amount">-$120.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-item" data-role="admin">
+                <div class="hi-status-line"></div>
+                <div class="hi-icon log-trip"><i
+                        class="ti ti-circle-check"></i></div>
+                <div class="hi-content">
+                    <div class="hi-info">
+                        <div class="hi-user-wrapper">
+                            <span class="hi-badge admin">Admin</span>
+                            <span class="hi-user">Sistem</span>
+                        </div>
+                        <span class="hi-action">approved the trip:</span>
+                        <span class="hi-target">"Istanbul Logistics"</span>
+                    </div>
+                    <div class="hi-meta">
+                        <span class="hi-time">2 hours ago</span>
+                        <span class="hi-tag">Confirmed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-item" data-role="moderator">
+                <div class="hi-status-line"></div>
+                <div class="hi-icon log-delete"><i
+                        class="ti ti-trash"></i></div>
+                <div class="hi-content">
+                    <div class="hi-info">
+                        <div class="hi-user-wrapper">
+                            <span class="hi-badge moderator">Mod</span>
+                            <span class="hi-user">Ece Naz</span>
+                        </div>
+                        <span class="hi-action">deleted a report:</span>
+                        <span class="hi-target">"Old_Backup_01"</span>
+                    </div>
+                    <div class="hi-meta">
+                        <span class="hi-time">22/03/2026 18:21</span>
+                        <span class="hi-status-red">Deleted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

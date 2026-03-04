@@ -12,13 +12,13 @@
                 </div>
                 <button id="exCreateExpense">New Expense</button>
             </div>
-            <button class="ex-filter-cta" id="exFilterBtn"><i
+            <button class="ex-filter-cta" id="exFilterBtn"
+                onclick="toggleFilter('expense', this)"><i
                     class="ti ti-filter"></i></button>
             <button class="ex-ranking-cta" id="exRankingBtn"><i
                     class="ti ti-filter-2"></i></button>
             <button class="ex-setting-three-dot"
-                id="exSettingBtn"><i
-                    class="ti ti-dots"></i></button>
+                id="exSettingBtn"><i class="ti ti-list-details"></i></button>
         </div>
     </div>
     <hr>
@@ -33,7 +33,15 @@
         <span class="ex-title-span">Status</span>
     </div>
     <div class="expense-list-container" id="expenseListBody">
-        <div class="expense-block">
+        <div class="expense-block" onclick="openExDetailModal({
+    title: 'Rest',
+    category: 'Accommodation',
+    merchant: 'Hotel',
+    amount: '$250',
+    user: 'Ahmet Yılmaz', 
+    desc: 'Hotel stay for February business trip.',
+    image: 'images/receipt.jpg'
+        })">
             <input type="checkbox" class="select-expense">
             <div class="expense-block-details">
                 <span class="expense-icon"><i
@@ -121,10 +129,31 @@
                     </div>
 
                     <div class="ex-input-group full">
-                        <label for="exInpDescription">Description
-                            (Optional)</label>
-                        <textarea id="exInpDescription"
-                            placeholder="Add a note about this expense..."></textarea>
+                        <label>Receipt / Document</label>
+                        <div class="ex-simple-upload" id="uploadWrapper"
+                            onclick="document.getElementById('exInpReceipt').click()">
+                            <div id="beforeSelect" class="upload-placeholder">
+                                <i class="ti ti-file-upload"></i>
+                                <span>Select receipt (Image or PDF)</span>
+                            </div>
+
+                            <div id="afterSelect" class="upload-preview"
+                                style="display: none;">
+                                <div id="previewIcon"
+                                    class="preview-icon"></div> <div
+                                    class="preview-details">
+                                    <span
+                                        id="previewFileName">filename.jpg</span>
+                                    <button type="button"
+                                        class="remove-file-btn"
+                                        onclick="removeSelectedFile(event)">Remove</button>
+                                </div>
+                            </div>
+
+                            <input type="file" id="exInpReceipt" hidden
+                                accept=".pdf, .jpg, .jpeg, .png"
+                                onchange="handleFilePreview(this)">
+                        </div>
                     </div>
 
                     <div class="ex-modal-options">

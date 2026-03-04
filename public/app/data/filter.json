@@ -1,0 +1,69 @@
+{
+  "expense": [
+    {
+      "label": "Date Interval",
+      "type": "date-group",
+      "fields": ["fDateStart", "fDateEnd"]
+    },
+    {
+      "label": "Expense Status",
+      "type": "select",
+      "id": "fStatus",
+      "options": ["All Status", "Submitted", "Approved", "Rejected", "Pending"]
+    },
+    {
+      "label": "Category",
+      "type": "select",
+      "id": "fCategory",
+      "options": ["All Categories", "Travel", "Infrastructure", "Food", "Marketing"]
+    },
+    {
+      "label": "Amount Range",
+      "type": "range",
+      "fields": ["fMin", "fMax"]
+    }
+  ],
+  "trips": [
+    {
+      "label": "Date Interval",
+      "type": "date-group",
+      "fields": ["fDateStart", "fDateEnd"]
+    },
+    {
+      "label": "Expense Status",
+      "type": "select",
+      "id": "fStatus",
+      "options": ["All Status", "Confirmed", "On Road"]
+    },
+    {
+      "label": "Category",
+      "type": "select",
+      "id": "fCategory",
+      "options": ["All Categories", "Personal", "Corporate"]
+    },
+    {
+      "label": "Amount Range",
+      "type": "range",
+      "fields": ["fMin", "fMax"]
+    }
+  ],
+  "history": [
+    {
+      "label": "Date Range",
+      "type": "date-group",
+      "fields": ["hDateStart", "hDateEnd"]
+    },
+    {
+      "label": "System content",
+      "type": "select",
+      "id": "hRole",
+      "options": ["All Members", "Admin", "Moderator", "Member", "System"]
+    },
+    {
+      "label": "Activity Type",
+      "type": "select",
+      "id": "hAction",
+      "options": ["All Activities", "Expense Created", "Trip Approved", "Member Joined", "Settings Changed"]
+    }
+  ]
+}
