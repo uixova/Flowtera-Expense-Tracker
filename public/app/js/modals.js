@@ -206,6 +206,30 @@ function closeAddMemberModal() {
     document.getElementById('tmAddMemberModal').style.display = 'none';
 }
 
+// CREATE TEAM 
+function toggleTeamPages(target) {
+    const selectionPage = document.getElementById('myTeamsSelectionPage');
+    const createPage = document.getElementById('tmCreateTeamPage');
+
+    if (target === 'create') {
+        selectionPage.style.display = 'none';
+        createPage.style.display = 'block';
+    } else {
+        createPage.style.display = 'none';
+        selectionPage.style.display = 'block';
+    }
+}
+
+function updateTeamPreview(name) {
+    const preview = document.getElementById('tmIconPreview');
+    if (!name) {
+        preview.innerText = "NT";
+        return;
+    }
+    const initials = name.split(' ').map(word => word[0]).join('').toUpperCase().substring(0, 2);
+    preview.innerText = initials;
+}
+
 // EXPENCE MODAL 
 function openExDetailModal(data) {
     const modal = document.getElementById('exDetailModal');

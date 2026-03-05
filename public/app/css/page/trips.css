@@ -137,7 +137,8 @@
 }
 
 .tr-modal-card {
-    width: 550px;
+    width: 800px;
+    max-width: 95vw;
     background: #222;
     border: 1px solid #333;
     border-radius: 24px;
@@ -190,6 +191,31 @@
     gap: 8px;
 }
 
+.tr-modal-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+}
+
+.tr-modal-left, .tr-modal-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tr-date-row {
+    display: flex;
+    gap: 10px;
+}
+
+.tr-amount-wrapper {
+    display: flex;
+    border: 1px solid #3d3d3d;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #2a2a2a;
+}
+
 .tr-input-group.full {
     margin-bottom: 20px;
 }
@@ -208,6 +234,29 @@
     padding: 12px 15px;
     color: #fff;
     outline: none;
+}
+
+.tr-amount-wrapper input {
+    flex: 2;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+.tr-currency-select {
+    flex: 1;
+    border: none !important;
+    border-left: 1px solid #3d3d3d !important;
+    border-radius: 0 !important;
+    background: #333 !important;
+    color: #0ed45a !important;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    padding: 0 5px;
+}
+
+.tr-amount-wrapper:focus-within {
+    border-color: #0ed45a;
 }
 
 .tr-input-group input:focus {

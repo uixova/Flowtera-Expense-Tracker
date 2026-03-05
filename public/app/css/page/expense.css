@@ -129,7 +129,8 @@
 }
 
 .ex-modal-card {
-    width: 500px;
+    width: 850px; 
+    max-width: 95vw;
     background: #252525;
     border: 1px solid #333;
     border-radius: 20px;
@@ -205,6 +206,33 @@
     flex-direction: column;
     gap: 8px;
 }
+
+.ex-modal-grid-form {
+    display: flex;
+    gap: 30px;
+}
+
+.ex-modal-left {
+    flex: 1.2; 
+    display: flex;
+    flex-direction: column;
+}
+
+.ex-modal-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    border-left: 1px solid #333; 
+    gap: 15px;
+}
+
+.horizontal-upload {
+    height: 160px; 
+    flex-direction: column;
+    text-align: center;
+}
+
 
 .ex-input-group.full {
     width: 100%;
@@ -388,6 +416,39 @@ input:checked+.slider:before {
 .ex-modal-btn:hover {
     transform: translateY(-2px);
     opacity: 0.9;
+}
+
+.ex-amount-wrapper {
+    display: flex;
+    gap: 0; 
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #2d2d2d;
+}
+
+.ex-amount-wrapper input {
+    flex: 2;
+    border: none !important; 
+    border-radius: 0 !important;
+    padding: 12px;
+}
+
+.ex-currency-select {
+    flex: 1;
+    border: none !important;
+    border-left: 1px solid #444 !important; 
+    border-radius: 0 !important;
+    background: #353535 !important;
+    cursor: pointer;
+    color: #0ed45a !important; 
+    font-weight: bold;
+    outline: none;
+}
+
+.ex-amount-wrapper:focus-within {
+    border-color: #0ed45a;
+    box-shadow: 0 0 10px rgba(14, 212, 90, 0.1);
 }
 
 @keyframes modalFadeIn {

@@ -15,9 +15,13 @@
             <button class="tm-add-member-btn" onclick="openAddMemberModal()">
                 <i class="ti ti-user-plus"></i> Quick Add
             </button>
+            <button class="tm-settings-btn"
+                onclick="toggleTeamPages('settings')" title="Team Settings">
+                <i class="ti ti-settings"></i> Settings
+            </button>
         </div>
     </div>
-    <hr>
+
 
     <div class="tm-list-view" id="tmListView" style="display:none;">
         <div class="tm-list-item active">
@@ -27,6 +31,120 @@
         <div class="tm-list-item">
             <span>Marketing Group</span>
             <span class="tm-count">3 Members</span>
+        </div>
+    </div>
+
+    <div id="tmCreateTeamPage" class="tm-page-layout" style="display: none;">
+        <div class="tm-container">
+            <div class="tm-page-header">
+                <div class="tm-header-left">
+                    <h1>Create Organization</h1>
+                </div>
+                <button class="tm-back-btn"
+                    onclick="toggleTeamPages('selection')">
+                    <i class="ti ti-arrow-back-up"></i> Back
+                </button>
+            </div>
+
+            <form id="newTeamForm" onsubmit="event.preventDefault()">
+                <div class="tm-setup-grid">
+                    <aside class="tm-setup-sidebar">
+                        <div class="tm-sticky-card">
+                            <div class="tm-image-upload-container">
+                                <div class="tm-preview-wrapper">
+                                    <img id="tmImagePreview"
+                                        src="https://via.placeholder.com/160?text=TEAM"
+                                        alt="Team Logo">
+                                    <div class="tm-upload-overlay"
+                                        onclick="document.getElementById('tmTeamLogoInput').click()">
+                                        <i class="ti ti-camera"></i>
+                                    </div>
+                                </div>
+                                <input type="file" id="tmTeamLogoInput"
+                                    accept="image/*" style="display: none;"
+                                    onchange="previewTeamLogo(this)">
+                                <button type="button" class="tm-upload-btn"
+                                    onclick="document.getElementById('tmTeamLogoInput').click()">
+                                    Upload Logo
+                                </button>
+                                <span class="tm-preview-label">Team
+                                    Branding</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <main class="tm-setup-main">
+                        <section class="tm-form-section">
+                            <h3 class="section-title">General Details</h3>
+                            <div class="tm-input-group">
+                                <label for="tmNewTeamName">Organization
+                                    Name</label>
+                                <input type="text" id="tmNewTeamName"
+                                    placeholder="e.g. Global Tech Solutions"
+                                    required>
+                            </div>
+
+                            <div class="tm-grid-row">
+                                <div class="tm-input-group">
+                                    <label for="tmMainCurrency">Default
+                                        Currency</label>
+                                    <select id="tmMainCurrency">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="TRY">TRY (₺)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                    </select>
+                                </div>
+                                <div class="tm-input-group">
+                                    <label for="tmWorkspaceType">Workspace
+                                        Type</label>
+                                    <select id="tmWorkspaceType">
+                                        <option
+                                            value="Corporate">Corporate</option>
+                                        <option
+                                            value="Personal">Personal</option>
+                                        <option
+                                            value="Education">Education</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="tm-form-section">
+                            <h3 class="section-title">Privacy</h3>
+                            <div class="tm-radio-group">
+                                <label class="tm-radio-card">
+                                    <input type="radio" name="privacy"
+                                        value="private" checked>
+                                    <div class="radio-content">
+                                        <i class="ti ti-lock"></i>
+                                        <div><strong>Private:
+                                            </strong><span>Invite
+                                                only</span></div>
+                                    </div>
+                                </label>
+                                <label class="tm-radio-card">
+                                    <input type="radio" name="privacy"
+                                        value="internal">
+                                    <div class="radio-content">
+                                        <i class="ti ti-world"></i>
+                                        <div><strong>Internal:
+                                            </strong><span>Domain
+                                                access</span></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </section>
+
+                        <div class="tm-setup-footer">
+                            <button type="button" class="tm-btn-ghost"
+                                onclick="toggleTeamPages('selection')">Discard</button>
+                            <button type="submit" class="tm-btn-primary"
+                                id="tmSaveTeamBtn">Create Workspace</button>
+                        </div>
+                    </main>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -71,28 +189,22 @@
     <div id="myTeamsSelectionPage" class="tm-selection-page"
         style="display: none;">
         <div class="tm-sel-header">
-            <div class="tm-sel-title">
+            <div class="tm-sel-actions">
                 <div>
                     <h1>Select Organization</h1>
                 </div>
-            </div>
-
-            <div class="tm-sel-actions">
-                <div class="search-wrapper">
-                    <i class="ti ti-search"></i>
-                    <input type="text" class="tm-search-input"
-                        id="tmSelSearchInput"
-                        placeholder="Search teams...">
-                </div>
-
                 <div class="tm-sel-nav-buttons">
+                    <div class="search-wrapper">
+                        <i class="ti ti-search"></i>
+                        <input type="text" class="tm-search-input"
+                            id="tmSelSearchInput"
+                            placeholder="Search teams...">
+                    </div>
                     <button id="tmSelRefreshBtn" title="Refresh List">
                         <i class="ti ti-refresh"></i>
                     </button>
-                    <button id="tmSelFilterBtn" title="Filter Teams">
-                        <i class="ti ti-filter"></i>
-                    </button>
-                    <button id="tmSelCreateBtn" class="tm-btn-gradient">
+                    <button id="tmSelCreateBtn" class="tm-btn-gradient"
+                        onclick="toggleTeamPages('create')">
                         <i class="ti ti-category-plus"></i> Create Team
                     </button>
                 </div>
@@ -214,7 +326,7 @@
                     <div class="adm-input-wrapper">
                         <i class="ti ti-at"></i>
                         <input type="text" id="tmNewMemberId"
-                            placeholder="e.g. user_123 or name@mail.com">
+                            placeholder="User id or Email">
                     </div>
                 </div>
 
@@ -346,6 +458,94 @@
                 <button class="tm-save-role-btn" id="saveRoleBtn">Update
                     Role</button>
             </div>
+        </div>
+    </div>
+    <div id="tmSettingsPage" class="tm-page-layout" style="display: none;">
+        <div class="tm-container">
+            <div class="tm-page-header">
+                <div class="tm-header-left">
+                    <h1>Team Settings</h1>
+                </div>
+                <button class="tm-back-btn" onclick="toggleTeamPages('main')">
+                    <i class="ti ti-arrow-back-up"></i> Back to Team
+                </button>
+            </div>
+
+            <form id="editTeamForm" onsubmit="event.preventDefault()">
+                <div class="tm-setup-grid">
+                    <aside class="tm-setup-sidebar">
+                        <div class="tm-sticky-card">
+                            <div class="tm-preview-wrapper">
+                                <img id="tmSettingsImagePreview"
+                                    src="https://via.placeholder.com/160?text=LOGO"
+                                    alt="Team Logo">
+                                <div class="tm-upload-overlay"
+                                    onclick="document.getElementById('tmSettingsLogoInput').click()">
+                                    <i class="ti ti-camera"></i>
+                                </div>
+                            </div>
+                            <input type="file" id="tmSettingsLogoInput"
+                                accept="image/*" style="display: none;"
+                                onchange="previewSettingsLogo(this)">
+                            <button type="button" class="tm-upload-btn"
+                                onclick="document.getElementById('tmSettingsLogoInput').click()">Change
+                                Logo</button>
+                            <span class="tm-preview-label">Organization
+                                Branding</span>
+                        </div>
+                    </aside>
+
+                    <main class="tm-setup-main">
+                        <section class="tm-form-section">
+                            <h3 class="section-title">General Configuration</h3>
+                            <div class="tm-input-group">
+                                <label for="tmEditTeamName">Organization
+                                    Name</label>
+                                <input type="text" id="tmEditTeamName"
+                                    value="Main Development Team">
+                            </div>
+                            <div class="tm-grid-row">
+                                <div class="tm-input-group">
+                                    <label for="tmWorkspaceType">Workspace
+                                        Type</label>
+                                    <select id="tmWorkspaceType">
+                                        <option
+                                            value="Corporate">Corporate</option>
+                                        <option
+                                            value="Personal">Personal</option>
+                                        <option
+                                            value="Education">Education</option>
+                                    </select>
+                                </div>
+                                <div class="tm-input-group">
+                                    <label for="tmEditStatus">System
+                                        Status</label>
+                                    <select id="tmEditStatus">
+                                        <option value="active">Active</option>
+                                        <option
+                                            value="maintenance">Maintenance</option>
+                                        <option
+                                            value="archived">Archived</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="tm-setup-footer">
+                            <button type="button" class="tm-btn-delete"
+                                onclick="confirmDeleteTeam()">Delete
+                                Team</button>
+                            <div class="tm-footer-right">
+                                <button type="button" class="tm-btn-ghost"
+                                    onclick="toggleTeamPages('main')">Cancel</button>
+                                <button type="submit" class="tm-btn-primary"
+                                    onclick="saveTeamSettings()">Update
+                                    Settings</button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </form>
         </div>
     </div>
 </div>

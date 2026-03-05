@@ -61,34 +61,28 @@
     </div>
 
     <div class="ex-modal-overlay" id="newExpenseModal">
-        <div class="ex-modal-card">
-            <div class="ex-modal-header">
-                <div class="ex-modal-title">
-                    <i class="ti ti-receipt-tax"></i>
-                    <span>Add New Expense</span>
-                </div>
-                <button class="ex-modal-close"
-                    onclick="toggleNewExpenseModal()"><i
-                        class="ti ti-x"></i></button>
+    <div class="ex-modal-card">
+        <div class="ex-modal-header">
+            <div class="ex-modal-title">
+                <i class="ti ti-receipt-tax"></i>
+                <span>Add New Expense</span>
+            </div>
+            <button class="ex-modal-close" onclick="toggleNewExpenseModal()">
+                <i class="ti ti-x"></i>
+            </button>
+        </div>
+
+        <div class="ex-modal-body">
+            <div class="ex-modal-info-bar">
+                <div class="info-item"><i class="ti ti-calendar-event"></i><span id="exAutoDate">--/--/----</span></div>
+                <div class="info-item"><i class="ti ti-shield-check"></i><span id="exAutoStatus">Status: Pending</span></div>
             </div>
 
-            <div class="ex-modal-body">
-                <div class="ex-modal-info-bar">
-                    <div class="info-item">
-                        <i class="ti ti-calendar-event"></i>
-                        <span id="exAutoDate">--/--/----</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="ti ti-shield-check"></i>
-                        <span id="exAutoStatus">Status: Pending</span>
-                    </div>
-                </div>
-
-                <form id="newExpenseForm" onsubmit="event.preventDefault()">
+            <form id="newExpenseForm" onsubmit="event.preventDefault()" class="ex-modal-grid-form">
+                <div class="ex-modal-left">
                     <div class="ex-input-group full">
                         <label for="exInpTitle">Detail / Title</label>
-                        <input type="text" id="exInpTitle"
-                            placeholder="e.g. Office Supplies" required>
+                        <input type="text" id="exInpTitle" placeholder="Office Supplies" required>
                     </div>
 
                     <div class="ex-input-row">
@@ -97,83 +91,74 @@
                             <select id="exInpCategory">
                                 <option value="Food">Food & Drink</option>
                                 <option value="Transport">Transport</option>
-                                <option
-                                    value="Accommodation">Accommodation</option>
+                                <option value="Accommodation">Accommodation</option>
                                 <option value="Health">Health</option>
-                                <option
-                                    value="Entertainment">Entertainment</option>
+                                <option value="Entertainment">Entertainment</option>
                             </select>
                         </div>
-                        <div class="ex-input-group">
-                            <label for="exInpAmount">Amount ($)</label>
-                            <input type="number" id="exInpAmount"
-                                placeholder="0.00" step="0.01" required>
-                        </div>
-                    </div>
-
-                    <div class="ex-input-row">
                         <div class="ex-input-group">
                             <label for="exInpMerchant">Merchant</label>
-                            <input type="text" id="exInpMerchant"
-                                placeholder="e.g. Amazon, Starbucks">
-                        </div>
-                        <div class="ex-input-group">
-                            <label for="exInpMethod">Payment Method</label>
-                            <select id="exInpMethod">
-                                <option value="Cash">Cash</option>
-                                <option value="Credit Card">Credit Card</option>
-                                <option value="Bank Transfer">Bank
-                                    Transfer</option>
-                            </select>
+                            <input type="text" id="exInpMerchant" placeholder="Amazon, Starbucks">
                         </div>
                     </div>
 
                     <div class="ex-input-group full">
+                        <label for="exInpMethod">Payment Method</label>
+                        <select id="exInpMethod">
+                            <option value="Cash">Cash</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="report-toggle-wrapper">
+                        <span>Add to Monthly Report?</span>
+                        <label class="switch">
+                            <input type="checkbox" id="exInpReport" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ex-modal-right">
+                    <div class="ex-input-group full">
                         <label>Receipt / Document</label>
-                        <div class="ex-simple-upload" id="uploadWrapper"
-                            onclick="document.getElementById('exInpReceipt').click()">
+                        <div class="ex-simple-upload horizontal-upload" id="uploadWrapper" onclick="document.getElementById('exInpReceipt').click()">
                             <div id="beforeSelect" class="upload-placeholder">
                                 <i class="ti ti-file-upload"></i>
-                                <span>Select receipt (Image or PDF)</span>
+                                <span>Upload Receipt</span>
                             </div>
-
-                            <div id="afterSelect" class="upload-preview"
-                                style="display: none;">
-                                <div id="previewIcon"
-                                    class="preview-icon"></div> <div
-                                    class="preview-details">
-                                    <span
-                                        id="previewFileName">filename.jpg</span>
-                                    <button type="button"
-                                        class="remove-file-btn"
-                                        onclick="removeSelectedFile(event)">Remove</button>
+                            <div id="afterSelect" class="upload-preview" style="display: none;">
+                                <div id="previewIcon" class="preview-icon"></div>
+                                <div class="preview-details">
+                                    <span id="previewFileName">filename.jpg</span>
+                                    <button type="button" class="remove-file-btn" onclick="removeSelectedFile(event)">Remove</button>
                                 </div>
                             </div>
-
-                            <input type="file" id="exInpReceipt" hidden
-                                accept=".pdf, .jpg, .jpeg, .png"
-                                onchange="handleFilePreview(this)">
+                            <input type="file" id="exInpReceipt" hidden accept=".pdf, .jpg, .jpeg, .png" onchange="handleFilePreview(this)">
                         </div>
                     </div>
 
-                    <div class="ex-modal-options">
-                        <div class="report-toggle-wrapper">
-                            <span>Add to Monthly Report?</span>
-                            <label class="switch">
-                                <input type="checkbox" id="exInpReport" checked>
-                                <span class="slider round"></span>
-                            </label>
+                    <div class="ex-input-group full">
+                        <label for="exInpAmount">Amount & Currency</label>
+                        <div class="ex-amount-wrapper">
+                            <input type="number" id="exInpAmount" placeholder="0.00" step="0.01" required>
+                            <select id="exInpCurrency" class="ex-currency-select">
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="TRY">TRY (₺)</option>
+                            </select>
                         </div>
                     </div>
-                </form>
-            </div>
 
-            <div class="ex-modal-footer">
-                <button class="ex-modal-btn cancel"
-                    onclick="toggleNewExpenseModal()">Cancel</button>
-                <button class="ex-modal-btn save" id="exSaveBtn">Create
-                    Expense</button>
-            </div>
+                    
+                </div>
+            </form>
+        </div>
+
+        <div class="ex-modal-footer">
+            <button class="ex-modal-btn cancel" onclick="toggleNewExpenseModal()">Cancel</button>
+            <button class="ex-modal-btn save" id="exSaveBtn">Create Expense</button>
         </div>
     </div>
+</div>
 </div>
